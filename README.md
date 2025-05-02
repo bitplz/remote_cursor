@@ -37,23 +37,6 @@ A powerful Flutter package that transforms your mobile device into a wireless mo
 | Pinch Zoom | Zoom in/out using pinch gesture | `"pinch_zoom"` | 🔄 Coming soon |
 | Swipe | Quick directional gestures | `"swipe_left"`, `"swipe_right"`, etc. | 🔄 Coming soon |
 
-## Supported Gestures
-
-| Gesture | Description | JSON Value | Status |
-|---------|-------------|------------|--------|
-| Move | Basic cursor movement | `"move"` | ✅ Supported |
-| Click | Left mouse button click | `"click"` | ✅ Supported |
-| Double Click | Double left mouse button click | `"double_click"` | ✅ Supported |
-| Right Click | Right mouse button click | `"right_click"` | ✅ Supported |
-| Vertical Scroll | Scroll up and down | `"scroll_vertical"` | 🔄 Coming soon |
-| Horizontal Scroll | Scroll left and right | `"scroll_horizontal"` | 🔄 Coming soon |
-| Middle Click | Middle mouse button click | `"middle_click"` | 🔄 Coming soon |
-| Drag Start | Begin drag operation | `"drag_start"` | 🔄 Coming soon |
-| Drag Move | Continue drag operation | `"drag_move"` | 🔄 Coming soon |
-| Drag End | End drag operation | `"drag_end"` | 🔄 Coming soon |
-| Pinch Zoom | Zoom in/out using pinch gesture | `"pinch_zoom"` | 🔄 Coming soon |
-| Swipe | Quick directional gestures | `"swipe_left"`, `"swipe_right"`, etc. | 🔄 Coming soon |
-
 ## Installation
 
 Add this to your package's `pubspec.yaml` file:
