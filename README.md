@@ -103,7 +103,7 @@ gyroController.gyroDataStream.listen((vector) {
 
 This package requires a WebSocket server running on your computer to receive mouse commands. You can find example server implementations in:
 
-- [Python server example](https://github.com/yourusername/remote_pointer_server_python)
+- [Python server example](https://github.com/bitplz/remote_cursor/example/server/remote_cursor_server.py)
 
 ## Advanced Configuration
 
