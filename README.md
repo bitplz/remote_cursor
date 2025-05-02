@@ -14,8 +14,11 @@ A powerful Flutter package that transforms your mobile device into a wireless mo
 - **Gesture Support**: Click, right-click, double-click actions
 - **Configuration Options**: Extensive parameters to customize behavior
 
-![RemoteCursor Demo](https://example.com/screenshot1.png)
-![Gyroscope Control](https://example.com/screenshot2.png)
+## Trackpad Control Demo
+![RemoteCursor Demo](https://github.com/bitplz/remote_cursor/blob/master/example/gyro-demo.gif)
+
+## Gyroscope Control Demo
+![Gyroscope Control](https://github.com/bitplz/remote_cursor/blob/master/example/trackpad-demo.gif)
 
 ## Installation
 
