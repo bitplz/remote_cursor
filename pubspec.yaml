@@ -1,7 +1,8 @@
 name: remote_cursor
 description: "A Flutter package that enables simulating mouse movements via WebSocket. Useful for building remote control interfaces, virtual desktops, or real-time interaction tools."
 version: 0.0.1
-homepage:
+homepage: https://pub.dev/packages/remote_cursor
+repository: https://github.com/bitplz/remote_cursor/
 
 environment:
   sdk: ^3.7.0

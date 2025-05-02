@@ -15,10 +15,27 @@ A powerful Flutter package that transforms your mobile device into a wireless mo
 - **Configuration Options**: Extensive parameters to customize behavior
 
 ## Gyroscope Control Demo
-![RemoteCursor Demo](https://github.com/bitplz/remote_cursor/blob/master/example/gyro-demo.gif)
+![RemoteCursor Demo](https://github.com/bitplz/remote_cursor/blob/main/example/gyro-demo.gif)
 
 ## Trackpad Control Demo
-![Gyroscope Control](https://github.com/bitplz/remote_cursor/blob/master/example/trackpad-demo.gif)
+![Gyroscope Control](https://github.com/bitplz/remote_cursor/blob/main/example/trackpad-demo.gif)
+
+## Supported Gestures
+
+| Gesture | Description | JSON Value | Status |
+|---------|-------------|------------|--------|
+| Move | Basic cursor movement | `"move"` | ✅ Supported |
+| Click | Left mouse button click | `"click"` | ✅ Supported |
+| Double Click | Double left mouse button click | `"double_click"` | ✅ Supported |
+| Right Click | Right mouse button click | `"right_click"` | ✅ Supported |
+| Vertical Scroll | Scroll up and down | `"scroll_vertical"` | 🔄 Coming soon |
+| Horizontal Scroll | Scroll left and right | `"scroll_horizontal"` | 🔄 Coming soon |
+| Middle Click | Middle mouse button click | `"middle_click"` | 🔄 Coming soon |
+| Drag Start | Begin drag operation | `"drag_start"` | 🔄 Coming soon |
+| Drag Move | Continue drag operation | `"drag_move"` | 🔄 Coming soon |
+| Drag End | End drag operation | `"drag_end"` | 🔄 Coming soon |
+| Pinch Zoom | Zoom in/out using pinch gesture | `"pinch_zoom"` | 🔄 Coming soon |
+| Swipe | Quick directional gestures | `"swipe_left"`, `"swipe_right"`, etc. | 🔄 Coming soon |
 
 ## Installation
 
@@ -26,7 +43,7 @@ Add this to your package's `pubspec.yaml` file:
 
 ```yaml
 dependencies:
-  remote_cursor: ^1.0.0
+  remote_cursor: ^0.0.1
 ```
 
 Then run:
@@ -107,7 +124,7 @@ gyroController.gyroDataStream.listen((vector) {
 
 This package requires a WebSocket server running on your computer to receive mouse commands. You can find example server implementations in:
 
-- [Python server example](https://github.com/bitplz/remote_cursor/blob/master/example/server/remote_cursor_server.py)
+- [Python server example](https://github.com/bitplz/remote_cursor/blob/main/example/server/remote_cursor_server.py)
 
 ## Advanced Configuration
 

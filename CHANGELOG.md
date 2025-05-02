@@ -1,6 +1,6 @@
 # Changelog
 
-## 0.1.0
+## 0.0.1
 
 * Initial release with basic mouse control functionality
 * Support for cursor movement, clicks
