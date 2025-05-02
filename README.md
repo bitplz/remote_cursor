@@ -14,8 +14,11 @@ A powerful Flutter package that transforms your mobile device into a wireless mo
 - **Gesture Support**: Click, right-click, double-click actions
 - **Configuration Options**: Extensive parameters to customize behavior
 
-![RemoteCursor Demo](https://example.com/screenshot1.png)
-![Gyroscope Control](https://example.com/screenshot2.png)
+## Gyroscope Control Demo
+![RemoteCursor Demo](https://github.com/bitplz/remote_cursor/blob/master/example/gyro-demo.gif)
+
+## Trackpad Control Demo
+![Gyroscope Control](https://github.com/bitplz/remote_cursor/blob/master/example/trackpad-demo.gif)
 
 ## Installation
 
@@ -49,6 +52,7 @@ await RemoteCursor.init(
 ```
 
 ### 2. Use Trackpad Controller
+
 
 ```dart
 // Get the singleton instance
@@ -103,7 +107,7 @@ gyroController.gyroDataStream.listen((vector) {
 
 This package requires a WebSocket server running on your computer to receive mouse commands. You can find example server implementations in:
 
-- [Python server example](https://github.com/yourusername/remote_pointer_server_python)
+- [Python server example](https://github.com/bitplz/remote_cursor/blob/master/example/server/remote_cursor_server.py)
 
 ## Advanced Configuration
 
@@ -192,98 +196,6 @@ gyroController.initConfig(config: customTrackpadConfig);
 | `disconnect()` | Disconnects from server |
 | `sendMessage(MouseActionConfig mouseActionConfig)` | Sends standardized action |
 | `sendCustomMessage(Map<String, dynamic> message)` | Sends custom message |
-
-## Example
-
-```dart
-import 'package:flutter/material.dart';
-import 'package:remote_cursor/remote_cursor.dart';
-
-void main() async {
-  WidgetsFlutterBinding.ensureInitialized();
-  
-  // Initialize WebSocket service
-  await RemoteCursor.init(
-    webSocketConfig: WebSocketConfig(ip: '192.168.1.100', port: 8080),
-  );
-  
-  runApp(const MyApp());
-}
-
-class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(title: const Text('Remote Pointer Example')),
-        body: const MouseControllerPage(),
-      ),
-    );
-  }
-}
-
-class MouseControllerPage extends StatefulWidget {
-  const MouseControllerPage({Key? key}) : super(key: key);
-
-  @override
-  _MouseControllerPageState createState() => _MouseControllerPageState();
-}
-
-class _MouseControllerPageState extends State<MouseControllerPage> {
-  bool _useGyro = false;
-  final trackpadController = TrackpadController.instance;
-  final gyroController = GyroController.instance;
-
-  @override
-  void dispose() {
-    RemoteCursor.dispose();
-    super.dispose();
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      children: [
-        // Control type toggle
-        SwitchListTile(
-          title: Text(_useGyro ? 'Gyroscope Control' : 'Trackpad Control'),
-          value: _useGyro,
-          onChanged: (value) {
-            setState(() {
-              _useGyro = value;
-              if (_useGyro) {
-                gyroController.activate();
-              } else {
-                gyroController.deactivate();
-              }
-            });
-          },
-        ),
-        
-        // Control area
-        Expanded(
-          child: _useGyro 
-            ? const Center(child: Text('Move device to control cursor'))
-            : GestureDetector(
-                onPanUpdate: (details) {
-                  trackpadController.onDrag(details.delta);
-                },
-                onTap: () => trackpadController.sendClick(),
-                onDoubleTap: () => trackpadController.sendDoubleClick(),
-                onLongPress: () => trackpadController.sendRightClick(),
-                child: Container(
-                  color: Colors.grey[200],
-                  child: const Center(child: Text('Trackpad Area')),
-                ),
-              ),
-        ),
-      ],
-    );
-  }
-}
-```
 
 ## Contributing
 
